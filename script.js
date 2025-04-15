@@ -1,5 +1,6 @@
 let score = 0;
-let timeLeft = 30;
+cosnt timeLimit = 30;
+let timeLeft = timeLimit;
 let gameInterval;
 
 // ゲーム開始ボタンの処理
@@ -17,11 +18,17 @@ let holes = document.querySelectorAll(".hole");
 function startGame() {
     // スコアと残り時間の初期化
     score = 0;
-    timeLeft = 30;
+    timeLeft = timeLimit;
 
     // スコアと残り時間の表示
     scoreText.textContent = score;
     timeLeftText.textContent = timeLeft;
+
+    holes.forEach(hole => {
+        while (hole.firstChild) {
+            hole.removeChild(hole.firstChild);
+        }
+    });
 
     // タイマースタート
     startTimer();
