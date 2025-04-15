@@ -1,5 +1,5 @@
 let score = 0;
-cosnt timeLimit = 30;
+const timeLimit = 30;
 let timeLeft = timeLimit;
 let gameInterval;
 
